@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+
+.aside-container {
+    grid-area: aside;
+    padding: 20px;
+    /* border: 2px solid black; */
+    background-color: black;
+    color: white;
+}
+
+.left-container {
+    grid-area: left;
+}
+
+.right-container {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cards-container {
+    grid-area: cards;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-container {
+    grid-area: main;
+    padding: 0 40px;
+
+    display: grid;
+
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 0.5fr 4.5fr;
+
+    grid-template-areas:
+        "left right"
+        "cards cards";
+    grid-gap: 10px;
+}
+
+.header-container {
+    grid-area: header;
+    /* border: 2px solid blue; */
+}
+
+body {
+    margin: 0px;
+
+    display: grid;
+    height: 100vh;
+
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 0.5fr 5fr;
+
+    grid-template-areas:
+        "aside header"
+        "aside main";
+}
+
+.header-item {
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.image-header {
+    height: 120px;
+    width: 100%;
+    background-color: rgb(200, 200, 200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid white;
+    color: gray;
+}
+
+.left-title {
+    margin: 0px;
+    font-size: 2em;
+}
+
+.left-decription {
+    margin-bottom: 50px;
+    font-size: 1em;
+    color: rgb(110, 110, 110);
+}
+
+.technologies {
+    margin: 0px;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 40px;
+}
+
+.card {
+    height: 500px;
+    width: 100%;
+    border-style: double;
+    background-color: rgb(174, 174, 174);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.card-size {
+    font-size: 6em;
+}
+
+@media(max-width:950px) {
+
+    body {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr 1fr;
+
+        grid-template-areas:
+            "header header header"
+            "main main main"
+            "aside aside aside";
+    }
+
+    .image-header {
+        width: 90%;
+        height: 75%;
+        grid-area: image-header;
+    }
+
+    .card-image {
+        height: 20vh;
+        width: 25vw;
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    .header-container {
+        padding: 10px;
+    }
+
+    .image-lbl {
+        font-size: 1.5em;
+    }
+
+    .aside-title {
+        grid-area: aside-title;
+    }
+
+    .aside-info {
+        grid-area: aside-info;
+    }
+
+    .link-page {
+        grid-area: link-page;
+    }
+
+    .aside-container {
+        display: grid;
+
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 0.5fr 2fr 0.3fr;
+
+        grid-template-areas:
+            "image-header aside-title"
+            "image-header aside-info"
+            ". link-page";
+
+
+    }
+
+    .card {
+        height: 300px;
+    }
+
+    .card-size {
+        font-size: 3em;
+    }
+
+    .left-container {
+        grid-area: left;
+    }
+
+    .right-container {
+        grid-area: right;
+    }
+
+    .cards-container {
+        grid-area: cards;
+    }
+
+    .main-container {
+        display: grid;
+
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 0.5fr 2fr 4fr;
+
+        grid-template-areas:
+            "left right"
+            "cards right"
+            "cards .";
+
+    }
+}
+
+@media(max-width:360px) {
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .technologies {
+        font-size: 1em;
+    }
+
+    .technologies-list {
+        font-size: 0.8em;
+    }
+
+    .right-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .btn {
+        height: 30px;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    .card-size {
+        font-size: 2em;
+    }
+
+    .card {
+        height: 30vh;
+    }
+
+    .aside-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aside-title {
+        font-size: 1em;
+    }
+
+    .aside-info {
+        font-size: 12px;
+    }
+
+    .link-page {
+        font-size: 0.7em;
+    }
+
+    .image-header {
+        height: 20vh;
+    }
+}
